@@ -1,0 +1,20 @@
+# Holi Festival Website 🎨🔥  
+
+## 📂 Project Structure
+/holi-website  
+   ├── index.html  (Home Page)  
+   ├── gallery.html  (Image Gallery)  
+   ├── history.html  (Holi History)  
+   ├── styles.css  (CSS for Design)  
+   ├── script.js  (JS for Interactivity)  
+   ├── images/  (Holi greeting images folder)
+   ## 🚀 Features  
+- Beautiful Holi greeting images  
+- Well-written history of Holi  
+- Mobile-friendly & fast loading  
+
+## 🛠 Technologies Used  
+- HTML, CSS, JavaScript  
+- GitHub Pages for hosting  
+
+🔗 *Live Site:* [Coming Soon]
