@@ -1,98 +1,31 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>होली 2025 - रंगों का त्योहार</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="header">
-        <h1>होली 2025</h1>
-        <p>रंगों के त्योहार की गैलरी</p>
-    </header>
-
-    <main class="gallery-container">
-        <div class="gallery" id="gallery"></div>
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const imageUrls = [
-                // ▼ यहाँ सारे Image URLs ▼
-               
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/happy-holi-radha-krishna-png-image-download-thumbnail-1711332606.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/happy-holi-in-hindi-banner-editing-png-image-download-thumbnail-1711332323.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/holika-dahan-in-text-png-images-download-thumbnail-1711253229.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/holi-ki-hardik-shubhkamnaen-text-png-image-download-thumbnail-1711332420.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/happy-holi-dp-editing-png-images-thumbnail-1678174793.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/holi-group-poster-banner-editing-png-images--thumbnail-1678174705.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/holika-dahan-text-png-images--thumbnail-1678174896.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/holi-group-poster-designing-png-transparent-images-download-thumbnail-1676430922.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/happy-holi-png-transparent-image-download-thumbnail-1646064661.jpg",
- "https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/happy-holi-png--thumbnail-1646064784.jpg",
- "https://i.pinimg.com/736x/93/db/e3/93dbe3e6cd769d9d3c907b4d860d22d6.jpg",
- "https://i.pinimg.com/474x/48/81/5e/48815e02b8d7000fb760f9543d3c6630.jpg",
- "https://i.pinimg.com/474x/10/5c/c3/105cc3a3be2aaaa44abaf41049a74689.jpg",
- "https://i.pinimg.com/474x/c7/59/66/c75966653ffbb14f8adc464a34b3350f.jpg",
- "https://i.pinimg.com/474x/d6/46/ab/d646abd34001208537538ba633947200.jpg",
- "https://i.pinimg.com/474x/4f/6e/0e/4f6e0e480d405a6ad20f1fae08bdbd61.jpg",
- "https://i.pinimg.com/474x/28/0c/9b/280c9bfd470dca3725ad62f3bd74fdf1.jpg",
- "https://i.pinimg.com/736x/d2/2e/72/d22e72da56621a603251cdf9c5be57cc.jpg",
- "https://i.pinimg.com/474x/3d/95/ae/3d95ae1ea1887fc7686d1998d9ae65fb.jpg",
- "https://i.pinimg.com/474x/3f/dd/fd/3fddfd5a542ea69b63f507cdd094e762.jpg",
- "https://i.pinimg.com/474x/64/06/4e/64064eeb506fe76ff0f598f907e6eb2a.jpg",
- "https://i.pinimg.com/736x/89/0e/22/890e22f5e259357599dcade6013f4748.jpg",
- "https://i.pinimg.com/474x/b0/f4/8a/b0f48ac8c65ae3cac3c263f7eff87928.jpg",
- "https://i.pinimg.com/474x/b0/56/a6/b056a64db6dbecdef97864056138068a.jpg",
- "https://i.pinimg.com/474x/20/37/cd/2037cd323eec0a2bbbd27f3e67b14925.jpg",
- "https://i.pinimg.com/474x/19/df/ba/19dfbacc4656de0a0ee9d150d3265b4d.jpg",
- "https://i.pinimg.com/474x/28/0c/9b/280c9bfd470dca3725ad62f3bd74fdf1.jpg",
- "https://i.pinimg.com/474x/16/75/aa/1675aa7f2ce76c1ada35db017c26a92d.jpg",
- "https://i.pinimg.com/736x/77/f1/38/77f138cd102b2b9470c1446ee7cb5ea9.jpg",
- "https://i.pinimg.com/474x/34/7b/88/347b8864bdc82dfdeba0043066371545.jpg',
- "https://i.pinimg.com/474x/4d/2f/91/4d2f911babc96712901efc538d7ef24b.jpg",
- "https://i.pinimg.com/474x/6b/14/43/6b144303e2c06a4c96843efec6b5a6b3.jpg",
- "https://i.pinimg.com/474x/97/98/4f/97984fb3d9bcf4ac199f7475560d1979.jpg",
- "https://i.pinimg.com/474x/61/91/52/6191520c79587d5c114004bb55769521.jpg",
- "https://i.pinimg.com/474x/de/77/6e/de776e281cd2828232fa2231a8b52170.jpg",
- "https://i.pinimg.com/474x/01/c8/46/01c8460536574ab9bbcb331e57e1867f.jpg",
- "https://i.pinimg.com/474x/d9/0a/31/d90a31022cb00fa94160edf307c6b678.jpg",
- "https://i.pinimg.com/474x/d7/47/f6/d747f660a45b8143294f8c84ff960159.jpg",
- "https://i.pinimg.com/474x/7b/fb/3d/7bfb3d555b389aa01186b8062ad40e6c.jpg",
- "https://i.pinimg.com/474x/58/f4/7a/58f47af5ccdc829073a90cacb6b5b19e.jpg",
- "https://i.pinimg.com/474x/7a/d7/64/7ad764d61a3ae86cba66db89460d6299.jpg",
- "https://i.pinimg.com/474x/57/af/df/57afdf1e02ae201fac534da2fec9b037.jpg",
-         
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const imageUrls = [
+            // ... सभी URLs
+            "https://i.pinimg.com/474x/34/7b/88/347b8864bdc82dfdeba0043066371545.jpg", // ❌ -> ✅ सही किया गया
+            // ... बाकी URLs
+            "https://i.imgur.com/2m8Q8aA.jpg" // अंतिम URL (कोई comma नहीं)
+        ];
+        
+        const gallery = document.getElementById('gallery');
+        
+        imageUrls.forEach(url => {
+            const card = document.createElement('div');
+            card.className = 'card';
             
-
-    "https://i.imgur.com/3m8Q8aA.jpg",  // Test Image 1
-    "https://i.imgur.com/5JZj5bL.jpg",  // Test Image 2
-    "https://i.imgur.com/7Q9GZ9y.jpg",  // Test Image 3
-    "https://i.imgur.com/9JZj5bL.jpg",  // Test Image 4
-    "https://i.imgur.com/2m8Q8aA.jpg" // Test Image 5
-
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = 'होली की तस्वीर';
+            img.loading = 'lazy';
             
+            // Error handling जोड़ें
+            img.onerror = function() {
+                this.src = 'https://via.placeholder.com/600x400/ff6b6b/fff?text=Image+Error';
+                console.error('Image load failed:', this.alt);
+            };
             
-            
-            
-            ];
-            
-            const gallery = document.getElementById('gallery');
-            
-            imageUrls.forEach(url => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                
-                const img = document.createElement('img');
-                img.src = url;
-                img.alt = 'होली की तस्वीर';
-                img.loading = 'lazy';
-                
-                card.appendChild(img);
-                gallery.appendChild(card);
-            });
+            card.appendChild(img);
+            gallery.appendChild(card);
         });
-    </script>
-</body>
-</html>
+    });
+</script>
