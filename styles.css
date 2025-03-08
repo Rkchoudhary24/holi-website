@@ -204,4 +204,7 @@ footer {
 }
 
 /* ================== NEW ADDITIONS END ================== */
-
+.card img { 
+    object-position: center;
+    background: linear-gradient(45deg, #ff6b6b30, #4ecdc430); /* Loading time पर gradient background */
+}
