@@ -1,61 +1,98 @@
-body {
-    font-family: Arial, sans-serif;
+/* styles.css */
+:root {
+    --primary: #ff6b6b;
+    --secondary: #4ecdc4;
+    --text: #2d3436;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui;
+    line-height: 1.6;
+    background: #f9f9f9;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
     text-align: center;
-    background-color: #ffefd5;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-header {
-    background: #ff4500;
-    color: white;
-    padding: 15px;
+
+.gallery-container {
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-.hero {
-    padding: 50px;
-    background: url('images/holi-banner.jpg') no-repeat center;
-    background-size: cover;
-    color: white;
-}
-.btn {
-    background: #ff4500;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
-}
+
 .gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
 }
-.image-card {
-    margin: 10px;
-    border: 2px solid #ff4500;
-    padding: 10px;
+
+.card {
     background: white;
-    border-radius: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4/3;
 }
-.image-card img {
-    width: 250px;
-    height: auto;
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
-footer {
-    background: #ff4500;
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 992px) { /* टैबलेट */
+    .gallery {
+        gap: 1.5rem;
+    }
+    .card {
+        aspect-ratio: 3/2;
+    }
+}
+
+@media (max-width: 768px) { /* बड़े मोबाइल */
+    .header {
+        padding: 2rem 1rem;
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr));
+    }
+    .card {
+        aspect-ratio: 1/1;
+    }
+}
+
+@media (max-width: 480px) { /* छोटे मोबाइल */
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        aspect-ratio: 16/9;
+    }
 }
