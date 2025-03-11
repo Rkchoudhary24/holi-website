@@ -1,31 +1,32 @@
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const imageUrls = [
-            // ... सभी URLs
-            "https://i.pinimg.com/474x/34/7b/88/347b8864bdc82dfdeba0043066371545.jpg", // ❌ -> ✅ सही किया गया
-            // ... बाकी URLs
-            "https://i.imgur.com/2m8Q8aA.jpg" // अंतिम URL (कोई comma नहीं)
-        ];
-        
-        const gallery = document.getElementById('gallery');
-        
-        imageUrls.forEach(url => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            
-            const img = document.createElement('img');
-            img.src = url;
-            img.alt = 'होली की तस्वीर';
-            img.loading = 'lazy';
-            
-            // Error handling जोड़ें
-            img.onerror = function() {
-                this.src = 'https://via.placeholder.com/600x400/ff6b6b/fff?text=Image+Error';
-                console.error('Image load failed:', this.alt);
-            };
-            
-            card.appendChild(img);
-            gallery.appendChild(card);
-        });
-    });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        /* Basic styling for the gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
