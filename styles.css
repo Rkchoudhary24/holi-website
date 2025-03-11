@@ -208,3 +208,7 @@ footer {
     object-position: center;
     background: linear-gradient(45deg, #ff6b6b30, #4ecdc430); /* Loading time पर gradient background */
 }
+.card img {
+    min-height: 200px;  /* Ensures placeholder space */
+    background: linear-gradient(45deg, #ff6b6b30, #4ecdc430); /* Fallback */
+}
