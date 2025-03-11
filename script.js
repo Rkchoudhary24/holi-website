@@ -27,4 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
         card.appendChild(img);
         gallery.appendChild(card);
     });
+});  document.addEventListener("DOMContentLoaded", function() {
+    const gallery = document.getElementById("gallery");
+
+    const images = [
+        "image/01c8460536574ab9bbcb331e57e1867f.jpg",
+        "image/57afdf1e02ae201fac534da2fec9b037.jpg",
+        "image/37.jpg"
+    ];
+
+    images.forEach(src => {
+        const imgElement = document.createElement("img");
+        imgElement.src = src;
+        imgElement.alt = "Holi Celebration";
+        imgElement.classList.add("gallery-image");
+        gallery.appendChild(imgElement);
+    });
 });
+
